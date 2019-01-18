@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>Personal ID</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Mobile</th>
+			<th>Email</th>
+			<th>Hobies</th>
+			<th>Description</th>
+			
+			<th>Detail</th>
+			<th>Delete</th>
+			<th>Edit</th>
+		</tr>
+		<tr th:each="personal : ${listPersonal}">
+			<td th:utext="${personal.personal_id}"></td>
+			<td th:utext="${personal.firstname}"></td>
+			<td th:utext="${personal.lastname}"></td>
+			<td th:utext="${personal.mobile}"></td>
+			<td th:utext="${personal.email}"></td>
+			<td th:utext="${personal.hobies}"></td>
+			<td th:utext="${personal.description}"></td>
+			
+			<td><a th:href="@{|/detail-personal/${personal.personal_id}|}"> Detail</a></td>
+			<td><a th:href="@{|/delete-personal/${personal.personal_id}|}"> Delete</a></td>
+			<td><a th:href="@{|/update-personal/${personal.personal_id}|}"> Edit</a></td>
+		</tr>
+	</table>
+	<a th:href="@{|/add-personal|}">ADD PERSONAL</a>
+</body>
+</html>

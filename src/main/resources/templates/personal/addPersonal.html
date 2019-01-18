@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 style="margin-left: 4%">ADD PERSONAL</h1>
+	<form th:action="@{/add-personal}" method="post" th:object="${personal}">
+		<table>
+			<tr>
+				<td>First Name: </td>
+				<td><input type="text" th:field="*{firstname}" /></td>
+			</tr>
+			<tr>
+				<td>Last Name: </td>
+				<td><input type="text" th:field="*{lastname}" /></td>
+			</tr>
+			<tr>
+				<td>Mobile: </td>
+				<td><input type="text" th:field="*{mobile}" /></td>
+			</tr>
+			
+			<tr>
+				<td>Email: </td>
+				<td><input type="text" th:field="*{email}" /></td>
+			</tr>
+			<tr>
+				<td>Hobies: </td>
+				<td><input type="text" th:field="*{hobies}" /></td>
+			</tr>
+			<tr>
+				<td>Desciption: </td>
+				<td><input type="text" th:field="*{description}" /></td>
+			</tr>
+            <tr>
+				<td></td>
+				<td><input type="submit" value="OK" /><input type="reset" name="Reset" style="margin-left: 5px;"/></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
